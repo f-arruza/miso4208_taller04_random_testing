@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/f-arruza/miso4208_taller04_random_testing#readme",
   "devDependencies": {
-    "cypress": "3.1.0"
+    "cypress": "3.1.0",
+    "wdio-jasmine-framework": "^0.3.2",
+    "wdio-selenium-standalone-service": "0.0.9",
+    "wdio-spec-reporter": "^0.1.2"
   }
 }
