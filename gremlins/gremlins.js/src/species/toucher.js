@@ -87,8 +87,12 @@ define(function(require) {
             document.body.appendChild(fragment);
         }
 
-        function defaultCanTouch() {
-            return true;
+        function isVisible(element) {
+            return !element.hidden;
+        }
+
+        function defaultCanTouch(element) {
+            return isVisible(element);
         }
 
         /**

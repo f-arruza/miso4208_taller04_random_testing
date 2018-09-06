@@ -65,6 +65,10 @@ define(function(require) {
             ];
         }
 
+        function isVisible(element) {
+            return !element.hidden;
+        }
+
         function defaultShowAction(x, y) {
             var clickSignal = document.createElement('div');
             clickSignal.style.zIndex = 2000;
@@ -91,7 +95,7 @@ define(function(require) {
 
         function defaultCanClick(element) {
             console.log(element.tagName);
-            return (element.tagName == 'button' || element.tagName == 'a');
+            return (isVisible(element) && (element.tagName == 'button' || element.tagName == 'a'));
         }
 
         /**
