@@ -45,7 +45,15 @@ define(function(require) {
          * @mixin
          */
         var config = {
-            distribution: [],  // percentage of each gremlin species ; the sum of all values should equal to 1
+            /**
+             * Distribución o probabilidad de uso de Species
+             * 1.) Clicker: 60%
+             * 2.) Toucher: 10%
+             * 3.) FormFiller: 10%
+             * 4.) Scroller: 10%
+             * 5.) Typer: 10%
+             */
+            distribution: [0.6, 0.1, 0.1, 0.1, 0.1],  // percentage of each gremlin species ; the sum of all values should equal to 1
             delay:        10,  // delay in milliseconds between each wave
             nb:           1000, // number of waves to execute (can be overridden in params)
             randomizer:   new Chance()
