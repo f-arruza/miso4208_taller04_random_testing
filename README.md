@@ -17,3 +17,7 @@ Después de realizar las modificaciones en el código de la librería **Gremlins
 
 Ejecución de la prueba, ver imagen 4.
 ![Imagen 4](gremlins/images/gremlins04.png)
+
+## UI/Application Exerciser Monkey en Android
+### Glucosio App
+![alt text](monkey_mobile/monkey_glucosio.gif)
