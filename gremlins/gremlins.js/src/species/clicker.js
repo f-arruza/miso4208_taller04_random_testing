@@ -2,7 +2,7 @@
  * The clicker gremlin clicks anywhere on the visible area of the document
  *
  * The clicker gremlin triggers mouse events (click, dblclick, mousedown,
- * mouseup, mouseover, mouseover, mouseover, mousemove, and mouseout) on 
+ * mouseup, mouseover, mouseover, mouseover, mousemove, and mouseout) on
  * random targets displayed on the viewport.
  *
  * By default, the clicker gremlin activity is showed by a red circle.
@@ -89,8 +89,9 @@ define(function(require) {
             }, 50);
         }
 
-        function defaultCanClick() {
-            return true;
+        function defaultCanClick(element) {
+            console.log(element.tagName);
+            return (element.tagName == 'button' || element.tagName == 'a');
         }
 
         /**
