@@ -22,4 +22,6 @@ Ejecución de la prueba, ver imagen 4.
 ### Glucosio App
 > ./adb shell monkey -p org.glucosio.android -v 10000
 
+El inicio demora unos segundos mientras termina de cargar el archivo.
+
 ![alt text](monkey_mobile/monkey_glucosio.gif)
