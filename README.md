@@ -20,4 +20,6 @@ Ejecución de la prueba, ver imagen 4.
 
 ## UI/Application Exerciser Monkey en Android
 ### Glucosio App
+> ./adb shell monkey -p org.glucosio.android -v 10000
+
 ![alt text](monkey_mobile/monkey_glucosio.gif)
