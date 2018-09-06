@@ -35,12 +35,16 @@ define(function(require) {
             'input[type="text"]': fillTextElement,
             'input[type="password"]': fillTextElement,
             'input[type="number"]': fillNumberElement,
-            'select': fillSelect,
-            'input[type="radio"]': fillRadio,
-            'input[type="checkbox"]': fillCheckbox,
+            // 'select': fillSelect,
+            // 'input[type="radio"]': fillRadio,
+            // 'input[type="checkbox"]': fillCheckbox,
             'input[type="email"]': fillEmail,
             'input:not([type])': fillTextElement
         };
+
+        function isVisible(element) {
+            return !element.hidden;
+        }
 
         function defaultShowAction(element) {
             if(typeof element.attributes['data-old-border'] === 'undefined') {
@@ -55,8 +59,8 @@ define(function(require) {
             }, 500);
         }
 
-        function defaultCanFillElement() {
-            return true;
+        function defaultCanFillElement(element) {
+            return isVisible(element);
         }
 
         /**
