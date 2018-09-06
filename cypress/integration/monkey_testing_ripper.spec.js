@@ -1,4 +1,8 @@
 describe('Los estudiantes under monkeys', function() {
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        return false
+    })
+
     it('visits los estudiantes and survives monkeys', function() {
         cy.visit('https://losestudiantes.co');
         cy.contains('Cerrar').click();
@@ -68,7 +72,8 @@ function randomTextField() {
         var randomInput = $inputs.get(getRandomInt(0, $inputs.length));
         if(!Cypress.dom.isHidden(randomInput) && (randomInput.type == '' || randomInput.type == 'text')) {
             console.log(randomInput);
-            cy.wrap(randomInput).clear().type(getRandomText(), {force: true});
+            cy.wrap(randomInput).clear({force: true})
+            cy.wrap(randomInput).type(getRandomText(), {force: true});
             cy.wait(1000);
         }
       }
@@ -85,8 +90,10 @@ function randomCombo() {
         console.log(randomSelect);
         if(!Cypress.dom.isHidden(randomSelect)) {
             console.log(randomSelect);
-            console.log(cy.wrap(randomSelect).get('option').first().getText());
-            cy.wrap(randomSelect).select(cy.wrap(randomSelect).get('option').first().getText());
+            cy.wrap(randomSelect).find('option').then(option => {
+                // console.log(option[0].value);
+                cy.wrap(randomSelect).select(option[0].value);
+            });
             cy.wait(1000);
         }
       }
